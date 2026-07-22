@@ -1,20 +1,64 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+
+  /* Diayma brand palette */
+  --color-cream: #F5EDD9;
+  --color-cream-50: #FBF6EB;
+  --color-cream-100: #F5EDD9;
+  --color-cream-200: #EADFC1;
+  --color-cream-300: #DCCEA6;
+  --color-forest: #1F4D3A;
+  --color-forest-50: #EAF0EC;
+  --color-forest-100: #D2DFD5;
+  --color-forest-400: #2E6449;
+  --color-forest-600: #173A2C;
+  --color-forest-700: #0F2A1F;
+  --color-forest-800: #0A1E17;
+  --color-gold: #B8945F;
+  --color-gold-50: #F6EFDC;
+  --color-gold-100: #EEE0B7;
+  --color-gold-400: #C6A961;
+  --color-clay: #C24E2F;
+  --color-clay-50: #FBEBE5;
+  --color-ink: #1A1815;
+
+  /* Landing page brand */
+  --color-brand-blue: #0066FF;
+  --color-brand-blue-hover: #0052CC;
+  --color-brand-blue-light: #EFF6FF;
+
+  --shadow-soft: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-card: 0 8px 24px rgba(0,0,0,0.10);
+}
 
 @layer base {
-  html, body, #root { height: 100%; }
   body {
-    margin: 0;
-    color: #1A1815;
-    @apply bg-cream antialiased;
-    font-family: 'Manrope', system-ui, sans-serif;
-    font-feature-settings: 'ss01', 'ss02';
-  }
-  html {
-    -webkit-text-size-adjust: 100%;
+    font-family: var(--font-sans);
+    background-color: #FFFFFF;
+    color: #0F172A;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
   .font-display { font-optical-sizing: auto; }
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #F8FAFC; }
+::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 102, 255, 0.4); }
+  70%  { transform: scale(1.05); box-shadow: 0 0 0 14px rgba(0, 102, 255, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 102, 255, 0); }
+}
+.animate-pulse-blue { animation: pulse-ring 2.5s infinite; }
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }

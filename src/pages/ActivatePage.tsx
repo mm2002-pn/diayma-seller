@@ -1,8 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { CheckCircle2, Download } from 'lucide-react';
 
-import { StoreButtons } from '@/components/StoreButtons';
-
 /**
  * Page servie quand la vendeuse clique son magic link SANS avoir l'app installée.
  * (Universal Links / App Links : si l'app est installée, iOS/Android intercepte
@@ -54,8 +52,15 @@ export function ActivatePage() {
             </p>
           </div>
 
-          <div>
-            <StoreButtons compact />
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="https://play.google.com/store" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl bg-forest text-cream px-5 py-3 text-sm font-semibold hover:bg-forest-600 transition">
+              <Download className="h-4 w-4" /> Google Play
+            </a>
+            <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-2xl border border-forest/20 text-forest px-5 py-3 text-sm font-semibold hover:bg-forest/5 transition">
+              <Download className="h-4 w-4" /> App Store
+            </a>
           </div>
 
           {hasToken && (
