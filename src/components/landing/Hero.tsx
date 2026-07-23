@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Play, ArrowRight, CheckCircle2, Sparkles, Mic, ShoppingBag, Volume2 } from 'lucide-react';
+import { Play, ArrowRight, CheckCircle2, Mic, Volume2, ShoppingCart, Radio } from 'lucide-react';
 
 interface HeroProps {
   onOpenSignup: () => void;
@@ -242,121 +242,102 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSignup, onOpenDemo, onOpenAssi
 
             {/* Phone Mockup Body */}
             <div className="w-full max-w-sm bg-slate-900 p-3 rounded-[40px] shadow-2xl border-4 border-slate-800 relative transform rotate-1 hover:rotate-0 transition-transform duration-300">
-              
+
               {/* Phone Top Notch */}
               <div className="w-32 h-4 bg-slate-800 rounded-b-xl mx-auto mb-2 flex items-center justify-center">
                 <div className="w-12 h-1 bg-slate-700 rounded-full" />
               </div>
 
-              {/* Screen Content */}
-              <div className="bg-slate-50 rounded-[30px] overflow-hidden border border-slate-200">
-                
-                {/* Phone Header App Bar */}
-                {/* Phone Header App Bar */}
-                <div className="bg-white px-4 py-3 border-b border-slate-200 flex items-center justify-between">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-[#1F4D3A] flex items-center justify-center text-white font-bold text-xs shadow-sm">
-                      <Sparkles className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-xs font-bold text-slate-900">DIAYEMA • Assistante IA</h4>
-                      <p className="text-[10px] text-emerald-600 font-medium flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
-                        En ligne • Français & Wolof
-                      </p>
-                    </div>
-                  </div>
-                  <span className="text-[10px] bg-emerald-50 text-emerald-700 px-2 py-1 rounded-md font-bold border border-emerald-200">
-                    24/7 🇸🇳
-                  </span>
-                </div>
+              {/* Screen — Buyer App */}
+              <div className="bg-white rounded-[30px] overflow-hidden" style={{ minHeight: 520 }}>
 
-                {/* Live status bar */}
-                <div className="relative bg-slate-900 text-white p-3 flex items-center justify-between overflow-hidden">
-                  <div className="absolute inset-0 opacity-40 bg-gradient-to-r from-[#0a2e1f] via-[#0f3d2a] to-[#1F4D3A]"></div>
-                  <div className="relative z-10 flex items-center gap-2">
-                    <span className="bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full flex items-center gap-1 animate-pulse">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
-                      LIVE DIAYMA
-                    </span>
-                    <span className="text-[11px] font-semibold text-slate-200">142 spectateurs</span>
+                {/* ── ShopHeader (exact replica) ── */}
+                <div className="flex items-center justify-between px-3.5 py-2.5 bg-white/95 border-b border-slate-100 sticky top-0 z-20">
+                  <div className="flex items-center gap-2">
+                    <div className="h-6 w-6 rounded-md bg-[#0066FF] flex items-center justify-center shrink-0">
+                      <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm-1 4v4H7l5 5 5-5h-4V8h-2z"/></svg>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-red-500 px-1.5 py-0.5 text-[8px] font-bold text-white uppercase tracking-wide">
+                        <Radio className="h-2 w-2 animate-pulse" />
+                        Live
+                      </span>
+                      <span className="text-[10px] font-semibold text-slate-800">Catalogue</span>
+                    </div>
                   </div>
-                  <div className="relative z-10 text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">
-                    8 commandes
+                  <div className="flex items-center gap-1.5 rounded-full bg-slate-50 px-2 py-1 border border-slate-200">
+                    <div className="h-4 w-4 rounded-full bg-[#0066FF] flex items-center justify-center text-white text-[7px] font-bold shrink-0">N</div>
+                    <span className="text-[9px] font-semibold text-slate-700">Ndeye Wax</span>
                   </div>
                 </div>
 
-                {/* Chat Feed inside Phone */}
-                <div className="p-3.5 space-y-3 min-h-[310px] max-h-[330px] overflow-y-auto bg-slate-50 text-xs">
-
-                  <div className="text-center my-1">
-                    <span className="bg-slate-200/80 text-slate-600 text-[10px] px-2.5 py-0.5 rounded-full font-medium">
-                      Aujourd'hui à Dakar
-                    </span>
+                {/* ── Product photo carousel (full height) ── */}
+                <div className="relative bg-amber-50" style={{ height: 280 }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=400&h=560"
+                    alt="Robe en Wax"
+                    className="w-full h-full object-cover object-top"
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/75 to-transparent" />
+                  {/* Price */}
+                  <div className="absolute bottom-4 left-4">
+                    <div className="text-[26px] font-extrabold text-white leading-none">35 000</div>
+                    <div className="text-xs font-semibold text-white/80 mt-0.5">F CFA</div>
                   </div>
-
-                  {/* User Voice Note */}
-                  <div className="flex justify-end">
-                    <div className="bg-[#0066FF] text-white p-3 rounded-2xl rounded-tr-none max-w-[85%] shadow-sm">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Mic className="w-3.5 h-3.5 text-blue-200" />
-                        <span className="font-semibold text-[11px]">Vocal (0:05)</span>
-                      </div>
-                      <p className="text-[11px] text-blue-50 leading-tight italic">
-                        « DIAYEMA, résume mes commandes du jour »
-                      </p>
-                    </div>
+                  {/* Viewer count */}
+                  <div className="absolute top-2.5 right-3 flex items-center gap-1 bg-black/50 backdrop-blur-sm rounded-full px-2 py-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>
+                    <span className="text-[9px] text-white font-semibold">142 en direct</span>
                   </div>
-
-                  {/* DIAYEMA Stats Response */}
-                  <div className="flex justify-start">
-                    <div className="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[90%] shadow-sm space-y-2">
-                      <div className="flex items-center gap-1.5 text-[#1F4D3A] font-bold text-[11px]">
-                        <Sparkles className="w-3.5 h-3.5" />
-                        <span>Voici tes ventes du jour</span>
-                      </div>
-                      <div className="grid grid-cols-2 gap-1.5">
-                        <div className="bg-emerald-50 p-2 rounded-xl border border-emerald-100 text-center">
-                          <div className="font-extrabold text-emerald-700 text-sm">8</div>
-                          <div className="text-[9px] text-emerald-600">Commandes</div>
-                        </div>
-                        <div className="bg-blue-50 p-2 rounded-xl border border-blue-100 text-center">
-                          <div className="font-extrabold text-blue-700 text-xs">124 000 F</div>
-                          <div className="text-[9px] text-blue-600">Encaissé</div>
-                        </div>
-                      </div>
-                      <div className="bg-amber-50 border border-amber-200 p-2 rounded-xl text-[10px] text-amber-900">
-                        ⏳ <strong>3 commandes</strong> en attente de livraison
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Order notification */}
-                  <div className="bg-blue-50 border border-blue-200 p-2.5 rounded-xl text-[11px] flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <ShoppingBag className="w-4 h-4 text-[#0066FF]" />
-                      <div>
-                        <span className="font-bold text-slate-800">Nouvelle commande Wave</span>
-                        <p className="text-[9px] text-slate-500">Robe Wax • Awa Sow • 28 000 FCFA</p>
-                      </div>
-                    </div>
-                    <span className="text-emerald-600 font-bold text-[10px]">✓ Payé</span>
-                  </div>
-
                 </div>
 
-                {/* Bottom Input Bar */}
-                <div className="p-2.5 bg-white border-t border-slate-200 flex items-center gap-2">
-                  <div className="flex-1 bg-slate-100 px-3 py-2 rounded-full text-slate-400 text-xs flex items-center justify-between">
-                    <span>Écrivez ou parlez à DIAYEMA…</span>
-                    <Sparkles className="w-3.5 h-3.5 text-[#1F4D3A]" />
+                {/* ── Dots ── */}
+                <div className="flex justify-center gap-1.5 py-2.5">
+                  <div className="h-1.5 w-5 rounded-full bg-[#0066FF]" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-slate-200" />
+                </div>
+
+                {/* ── Commander button ── */}
+                <div className="px-3 pb-3">
+                  <div className="w-full h-12 rounded-full bg-[#0066FF] text-white text-sm font-bold flex items-center justify-center gap-2 shadow-md shadow-blue-500/30">
+                    <ShoppingCart className="w-4 h-4" />
+                    <span>Commander</span>
                   </div>
-                  <button
-                    onClick={onOpenAssistant}
-                    className="w-8 h-8 rounded-full bg-[#1F4D3A] text-white flex items-center justify-center hover:bg-[#2E6449]"
-                  >
-                    <Mic className="w-4 h-4" />
-                  </button>
+                </div>
+
+                {/* ── Bottom sheet checkout (partiellement visible) ── */}
+                <div className="mx-2 mb-2 bg-white rounded-2xl border border-slate-100 shadow-lg overflow-hidden">
+                  {/* Drag handle */}
+                  <div className="flex justify-center pt-2 pb-1">
+                    <div className="h-1 w-8 rounded-full bg-slate-200" />
+                  </div>
+                  {/* Item preview */}
+                  <div className="px-3 pb-3 space-y-2">
+                    <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-100 rounded-xl p-2">
+                      <img
+                        src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=80"
+                        className="h-9 w-9 rounded-lg object-cover flex-shrink-0"
+                        alt=""
+                      />
+                      <div className="flex-1 min-w-0">
+                        <div className="text-[10px] font-semibold text-slate-800 truncate">Robe Wax Imprimé</div>
+                        <div className="text-[10px] font-bold text-slate-900">35 000 F × 1</div>
+                      </div>
+                    </div>
+                    {/* Wave button */}
+                    <div className="w-full h-10 rounded-full bg-[#0066FF] text-white text-[11px] font-bold flex items-center justify-center gap-2">
+                      <span className="h-5 w-5 rounded-md bg-white flex items-center justify-center">
+                        <svg viewBox="0 0 32 32" className="h-3.5 w-3.5" fill="none">
+                          <rect width="32" height="32" rx="6" fill="#1F56DE"/>
+                          <path d="M5 20C7 20 8 14 10 14C12 14 12 20 14 20C16 20 17 14 19 14C21 14 22 20 24 20" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none"/>
+                        </svg>
+                      </span>
+                      Payer avec Wave · Orange Money
+                    </div>
+                  </div>
                 </div>
 
               </div>
