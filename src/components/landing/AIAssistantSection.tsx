@@ -49,7 +49,7 @@ Broderies artisanales faites main à Dakar. Une pièce royale idéale pour vos b
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
-              <span className="text-[#0066FF] font-extrabold">IA Fatou en ligne</span>
+              <span className="text-[#0066FF] font-extrabold">IA DIAYEMA en ligne</span>
               <span className="text-slate-300">•</span>
               <span className="text-slate-600">Comprend le Wolof 🇸🇳</span>
             </div>
@@ -62,7 +62,7 @@ Broderies artisanales faites main à Dakar. Une pièce royale idéale pour vos b
 
             {/* Description */}
             <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">
-              Une intelligence artificielle formée pour les besoins des commerçantes sénégalaises. Écrivez ou envoyez un message vocal à Fatou : elle enregistre vos ventes, génère des fiches produits en FCFA et gère votre stock.
+              Une intelligence artificielle conçue pour les commerçantes sénégalaises. Écrivez ou envoyez un message vocal à DIAYEMA : elle résume vos commandes, répond en français et en wolof, et vous aide à gérer votre boutique sans effort.
             </p>
 
             {/* Preset prompt buttons */}
@@ -91,7 +91,7 @@ Broderies artisanales faites main à Dakar. Une pièce royale idéale pour vos b
                 className="px-8 py-4 rounded-full bg-[#0066FF] hover:bg-[#0052CC] text-white font-bold text-sm shadow-xl shadow-blue-500/25 transition-all flex items-center gap-3"
               >
                 <Bot className="w-5 h-5" />
-                <span>Tester l'assistante Fatou</span>
+                <span>Tester l'assistante DIAYEMA</span>
               </button>
             </div>
           </motion.div>
@@ -114,7 +114,7 @@ Broderies artisanales faites main à Dakar. Une pièce royale idéale pour vos b
                   </div>
                   <div>
                     <h3 className="font-bold text-sm text-white flex items-center gap-2">
-                      Fatou • Assistante Diayma
+                      DIAYEMA • Assistante Diayma
                       <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-normal px-2 py-0.5 rounded-full border border-emerald-500/40">
                         24/7
                       </span>
@@ -135,22 +135,32 @@ Broderies artisanales faites main à Dakar. Une pièce royale idéale pour vos b
                 <div className="flex justify-end">
                   <div className="bg-[#0066FF] text-white px-4 py-3 rounded-2xl rounded-tr-none max-w-md font-medium text-xs sm:text-sm shadow-md flex items-center gap-2">
                     <Mic className="w-4 h-4 shrink-0 text-blue-200" />
-                    <span>Comment faire pour augmenter mes ventes pendant mon live de ce soir ?</span>
+                    <span>DIAYEMA, quelles sont mes commandes en attente ?</span>
                   </div>
                 </div>
 
                 {/* Exchange 1: AI */}
                 <div className="flex justify-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-slate-800 text-[#0066FF] flex-shrink-0 flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-xl bg-[#1F4D3A] text-white flex-shrink-0 flex items-center justify-center font-bold text-xs">
                     <Bot className="w-4 h-4" />
                   </div>
                   <div className="bg-slate-800/90 border border-slate-700/80 text-slate-100 p-4 rounded-2xl rounded-tl-none max-w-lg space-y-2 text-xs sm:text-sm">
-                    <p className="font-bold text-[#0066FF]">Voici 3 conseils stratégiques pour ce soir :</p>
-                    <ol className="list-decimal list-inside space-y-1 text-slate-300 font-normal">
-                      <li><strong>Présentation tactile :</strong> Montrez la matière en gros plan sous la lumière naturelle dès les 3 premières minutes.</li>
-                      <li><strong>Offre Flash Wave / Orange Money :</strong> Offrez la livraison gratuite pour les 5 premiers paiements instantanés.</li>
-                      <li><strong>Épinglez votre lien Diayma :</strong> Permettez à vos clientes de commander en 1 clic sans quitter la vidéo.</li>
-                    </ol>
+                    <p className="font-bold text-emerald-400">Tu as 3 commandes en attente :</p>
+                    <ul className="space-y-1.5 text-slate-300 font-normal">
+                      <li className="flex items-center justify-between gap-4">
+                        <span>#47 — Robe Wax • Awa Sow</span>
+                        <span className="text-amber-400 font-semibold text-[11px]">PENDING</span>
+                      </li>
+                      <li className="flex items-center justify-between gap-4">
+                        <span>#48 — Bazin violet • Coumba N.</span>
+                        <span className="text-amber-400 font-semibold text-[11px]">PENDING</span>
+                      </li>
+                      <li className="flex items-center justify-between gap-4">
+                        <span>#51 — Ensemble soie • Khady B.</span>
+                        <span className="text-blue-400 font-semibold text-[11px]">PAYÉE</span>
+                      </li>
+                    </ul>
+                    <p className="text-slate-400 text-[11px]">Veux-tu que je mette à jour un statut ?</p>
                   </div>
                 </div>
 
@@ -163,7 +173,7 @@ Broderies artisanales faites main à Dakar. Une pièce royale idéale pour vos b
 
                 {/* Exchange 2: AI */}
                 <div className="flex justify-start gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-slate-800 text-[#0066FF] flex-shrink-0 flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-xl bg-[#1F4D3A] text-white flex-shrink-0 flex items-center justify-center font-bold text-xs">
                     <Bot className="w-4 h-4" />
                   </div>
                   <div className="bg-slate-800/90 border border-slate-700/80 text-slate-100 p-4 rounded-2xl rounded-tl-none max-w-lg space-y-3 text-xs sm:text-sm relative">
@@ -192,7 +202,7 @@ Broderies artisanales faites main à Dakar. Une pièce royale idéale pour vos b
               >
                 <div className="flex items-center gap-2">
                   <MessageSquare className="w-4 h-4 text-[#0066FF]" />
-                  <span>Écrivez ou parlez à l'assistante Fatou...</span>
+                  <span>Écrivez ou parlez à l'assistante DIAYEMA...</span>
                 </div>
                 <div className="w-8 h-8 rounded-xl bg-[#0066FF] group-hover:bg-[#0052CC] text-white flex items-center justify-center font-bold transition-colors">
                   <Send className="w-4 h-4" />

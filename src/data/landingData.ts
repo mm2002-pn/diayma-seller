@@ -39,8 +39,8 @@ export const FEATURES_DATA: FeatureItem[] = [
   {
     id: 'ai-assistant',
     icon: 'Sparkles',
-    title: 'Assistante IA dédiée 24h/24',
-    description: 'Bénéficiez d’une conseillère intelligente intégrée : rédaction de textes de vente percutants, conseils de prix en FCFA, idées de lives et réponses automatisées à vos clientes.',
+    title: "DIAYEMA — votre assistante IA 24h/24",
+    description: "Posez vos questions en français ou en wolof : DIAYEMA résume vos commandes, liste vos ventes, met à jour les statuts et vous conseille pour booster vos lives.",
     tag: 'IA Sénégal'
   }
 ];
@@ -111,8 +111,8 @@ export const SAMPLE_LIVE_COMMENTS: LiveComment[] = [
 ];
 
 export const PRESET_AI_PROMPTS = [
-  "Rédige une description pour une robe en Wax hollandais 👗",
-  "Comment faire un bon live de vente ce soir ? 🎥",
-  "Quel prix fixer pour un ensemble Bazin brodé ? 💰",
-  "Comment gérer la livraison à Dakar et dans les régions ? 🚚"
+  "Quelles sont mes commandes en attente ? 📦",
+  "Résume mes ventes du mois 📊",
+  "Rédige une description pour ma robe en Wax 👗",
+  "Comment booster mes ventes en live ce soir ? 🎥"
 ];

@@ -182,9 +182,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSignup, onOpenDemo, onOpenAssi
                 </button>
                 <div className="text-xs">
                   <div className="font-bold text-slate-800 flex items-center gap-1.5">
-                    <span>« Fatou, enregistre 15 000 FCFA reçu par Wave »</span>
+                    <span>« DIAYEMA, résume mes commandes du jour »</span>
                   </div>
-                  <span className="text-slate-500">Écouter l'assistant répondre instantanément</span>
+                  <span className="text-slate-500">Écouter DIAYEMA répondre en français ou wolof</span>
                 </div>
               </div>
               {onOpenAssistant && (
@@ -252,100 +252,95 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSignup, onOpenDemo, onOpenAssi
               <div className="bg-slate-50 rounded-[30px] overflow-hidden border border-slate-200">
                 
                 {/* Phone Header App Bar */}
+                {/* Phone Header App Bar */}
                 <div className="bg-white px-4 py-3 border-b border-slate-200 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-full bg-[#0066FF] flex items-center justify-center text-white font-bold text-xs shadow-sm">
-                      D
+                    <div className="w-8 h-8 rounded-full bg-[#1F4D3A] flex items-center justify-center text-white font-bold text-xs shadow-sm">
+                      <Sparkles className="w-4 h-4" />
                     </div>
                     <div>
-                      <h4 className="text-xs font-bold text-slate-900">Fatou • Diayma IA</h4>
+                      <h4 className="text-xs font-bold text-slate-900">DIAYEMA • Assistante IA</h4>
                       <p className="text-[10px] text-emerald-600 font-medium flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
-                        En ligne • Direct Live
+                        En ligne • Français & Wolof
                       </p>
                     </div>
                   </div>
-                  <span className="text-[10px] bg-slate-100 text-slate-700 px-2 py-1 rounded-md font-bold">
-                    Sénégal 🇸🇳
+                  <span className="text-[10px] bg-emerald-50 text-emerald-700 px-2 py-1 rounded-md font-bold border border-emerald-200">
+                    24/7 🇸🇳
                   </span>
                 </div>
 
-                {/* Live Shopping Stream Header */}
+                {/* Live status bar */}
                 <div className="relative bg-slate-900 text-white p-3 flex items-center justify-between overflow-hidden">
-                  <div className="absolute inset-0 opacity-40 bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900"></div>
+                  <div className="absolute inset-0 opacity-40 bg-gradient-to-r from-[#0a2e1f] via-[#0f3d2a] to-[#1F4D3A]"></div>
                   <div className="relative z-10 flex items-center gap-2">
                     <span className="bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full flex items-center gap-1 animate-pulse">
                       <span className="w-1.5 h-1.5 rounded-full bg-white"></span>
-                      LIVE TIKTOK
+                      LIVE DIAYMA
                     </span>
-                    <span className="text-[11px] font-semibold text-slate-200">348 Vendeuses</span>
+                    <span className="text-[11px] font-semibold text-slate-200">142 spectateurs</span>
                   </div>
                   <div className="relative z-10 text-[10px] text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-500/30">
-                    49 Ventes aujourd'hui
+                    8 commandes
                   </div>
                 </div>
 
                 {/* Chat Feed inside Phone */}
                 <div className="p-3.5 space-y-3 min-h-[310px] max-h-[330px] overflow-y-auto bg-slate-50 text-xs">
-                  
-                  {/* System Date Badge */}
+
                   <div className="text-center my-1">
                     <span className="bg-slate-200/80 text-slate-600 text-[10px] px-2.5 py-0.5 rounded-full font-medium">
                       Aujourd'hui à Dakar
                     </span>
                   </div>
 
-                  {/* User Voice Note Bubble */}
+                  {/* User Voice Note */}
                   <div className="flex justify-end">
                     <div className="bg-[#0066FF] text-white p-3 rounded-2xl rounded-tr-none max-w-[85%] shadow-sm">
                       <div className="flex items-center gap-2 mb-1">
                         <Mic className="w-3.5 h-3.5 text-blue-200" />
-                        <span className="font-semibold text-[11px]">Vocal envoyé (0:09)</span>
+                        <span className="font-semibold text-[11px]">Vocal (0:05)</span>
                       </div>
                       <p className="text-[11px] text-blue-50 leading-tight italic">
-                        « Fatou, enregistre 18 000 FCFA pour la Robe Boubou payée par Wave par Awa Sow »
+                        « DIAYEMA, résume mes commandes du jour »
                       </p>
                     </div>
                   </div>
 
-                  {/* Assistant Response Card */}
+                  {/* DIAYEMA Stats Response */}
                   <div className="flex justify-start">
                     <div className="bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[90%] shadow-sm space-y-2">
-                      <div className="flex items-center gap-1.5 text-[#0066FF] font-bold text-[11px]">
+                      <div className="flex items-center gap-1.5 text-[#1F4D3A] font-bold text-[11px]">
                         <Sparkles className="w-3.5 h-3.5" />
-                        <span>Vente confirmée & enregistrée</span>
+                        <span>Voici tes ventes du jour</span>
                       </div>
-                      
-                      <div className="bg-emerald-50 p-2 rounded-xl border border-emerald-100 flex items-center justify-between">
-                        <div>
-                          <div className="font-bold text-slate-900 text-[11px]">Robe Boubou Soie</div>
-                          <div className="text-[10px] text-slate-500">Awa Sow • Wave Money</div>
+                      <div className="grid grid-cols-2 gap-1.5">
+                        <div className="bg-emerald-50 p-2 rounded-xl border border-emerald-100 text-center">
+                          <div className="font-extrabold text-emerald-700 text-sm">8</div>
+                          <div className="text-[9px] text-emerald-600">Commandes</div>
                         </div>
-                        <div className="text-right">
-                          <div className="font-extrabold text-emerald-700 text-xs">18.000 F</div>
-                          <div className="text-[9px] text-emerald-600">Encaissements</div>
+                        <div className="bg-blue-50 p-2 rounded-xl border border-blue-100 text-center">
+                          <div className="font-extrabold text-blue-700 text-xs">124 000 F</div>
+                          <div className="text-[9px] text-blue-600">Encaissé</div>
                         </div>
                       </div>
-
-                      {/* Stock Alert Chip */}
-                      <div className="bg-amber-50 border border-amber-200 p-2 rounded-xl text-[10px] text-amber-900 flex items-center justify-between">
-                        <span>⚠️ Stock Boubou Soie: <strong>plus que 2 unités !</strong></span>
+                      <div className="bg-amber-50 border border-amber-200 p-2 rounded-xl text-[10px] text-amber-900">
+                        ⏳ <strong>3 commandes</strong> en attente de livraison
                       </div>
                     </div>
                   </div>
 
-                  {/* Customer Order Pill */}
+                  {/* Order notification */}
                   <div className="bg-blue-50 border border-blue-200 p-2.5 rounded-xl text-[11px] flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <ShoppingBag className="w-4 h-4 text-[#0066FF]" />
                       <div>
-                        <span className="font-bold text-slate-800">Lien de paiement généré</span>
-                        <p className="text-[9px] text-slate-500">Envoyé sur le WhatsApp d'Awa</p>
+                        <span className="font-bold text-slate-800">Nouvelle commande Wave</span>
+                        <p className="text-[9px] text-slate-500">Robe Wax • Awa Sow • 28 000 FCFA</p>
                       </div>
                     </div>
-                    <span className="bg-[#0066FF] text-white font-bold text-[10px] px-2 py-1 rounded-md">
-                      Copier
-                    </span>
+                    <span className="text-emerald-600 font-bold text-[10px]">✓ Payé</span>
                   </div>
 
                 </div>
@@ -353,12 +348,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSignup, onOpenDemo, onOpenAssi
                 {/* Bottom Input Bar */}
                 <div className="p-2.5 bg-white border-t border-slate-200 flex items-center gap-2">
                   <div className="flex-1 bg-slate-100 px-3 py-2 rounded-full text-slate-400 text-xs flex items-center justify-between">
-                    <span>Écrivez ou parlez à Fatou...</span>
-                    <Sparkles className="w-3.5 h-3.5 text-[#0066FF]" />
+                    <span>Écrivez ou parlez à DIAYEMA…</span>
+                    <Sparkles className="w-3.5 h-3.5 text-[#1F4D3A]" />
                   </div>
-                  <button 
+                  <button
                     onClick={onOpenAssistant}
-                    className="w-8 h-8 rounded-full bg-[#0066FF] text-white flex items-center justify-center hover:bg-[#0052CC]"
+                    className="w-8 h-8 rounded-full bg-[#1F4D3A] text-white flex items-center justify-center hover:bg-[#2E6449]"
                   >
                     <Mic className="w-4 h-4" />
                   </button>

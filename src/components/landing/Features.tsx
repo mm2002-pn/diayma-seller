@@ -49,7 +49,7 @@ export const Features: React.FC<FeaturesProps> = ({ onOpenAssistant, onOpenDemo 
             </h2>
           </div>
           <p className="text-sm sm:text-base text-slate-600 max-w-md font-normal leading-relaxed">
-            Conçu spécialement pour la vente sociale au Sénégal : application mobile iOS & Android, live streaming, liens de paiement Wave & Orange Money et suivi en direct par l'IA Fatou.
+            Conçu spécialement pour la vente sociale au Sénégal : application mobile iOS & Android, live streaming, liens de paiement Wave & Orange Money et suivi en direct par l'IA DIAYEMA.
           </p>
         </motion.div>
 
@@ -121,7 +121,7 @@ export const Features: React.FC<FeaturesProps> = ({ onOpenAssistant, onOpenDemo 
                       onClick={onOpenAssistant}
                       className="w-full text-xs font-bold uppercase tracking-wider text-[#0066FF] hover:text-white flex items-center justify-between group/btn"
                     >
-                      <span>Parler à l'assistante Fatou</span>
+                      <span>Parler à l'assistante DIAYEMA</span>
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   ) : (
