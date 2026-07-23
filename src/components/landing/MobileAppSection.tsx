@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Smartphone, Bell, WifiOff, Video, Mic, Star, ArrowRight, Download, QrCode, Send, Check } from 'lucide-react';
+import { Smartphone, Bell, Package, Mic, BarChart2, ArrowRight, QrCode, Send, Check } from 'lucide-react';
 
 interface MobileAppSectionProps {
   onOpenSignup?: () => void;
@@ -192,23 +192,6 @@ export const MobileAppSection: React.FC<MobileAppSectionProps> = ({ onOpenSignup
               </form>
             </div>
 
-            {/* Rating and Downloads Counter */}
-            <div className="pt-1 flex items-center gap-6 text-xs text-slate-600 font-medium">
-              <div className="flex items-center gap-1.5">
-                <div className="flex text-amber-400">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-current" />
-                  ))}
-                </div>
-                <span className="font-bold text-slate-900">4.9/5</span>
-                <span>(1.2k+ avis au Sénégal)</span>
-              </div>
-              <span className="text-slate-300">•</span>
-              <div className="flex items-center gap-1.5 text-slate-700">
-                <Download className="w-4 h-4 text-[#0066FF]" />
-                <span className="font-bold text-slate-900">+10 000</span> installations
-              </div>
-            </div>
 
             {/* 4 Feature Highlights Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -216,29 +199,19 @@ export const MobileAppSection: React.FC<MobileAppSectionProps> = ({ onOpenSignup
                 <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#0066FF] flex items-center justify-center font-bold">
                   <Bell className="w-4 h-4" />
                 </div>
-                <h4 className="font-bold text-slate-900 text-sm">Notifications Ventes Instantanées</h4>
+                <h4 className="font-bold text-slate-900 text-sm">Alertes commandes en temps réel</h4>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  Alerte sonore et visuelle à chaque paiement Wave ou Orange Money reçu en direct.
+                  Notification sonore dès qu'une commande est passée — Wave, Orange Money ou livraison.
                 </p>
               </div>
 
               <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1.5">
                 <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#0066FF] flex items-center justify-center font-bold">
-                  <WifiOff className="w-4 h-4" />
+                  <Package className="w-4 h-4" />
                 </div>
-                <h4 className="font-bold text-slate-900 text-sm">Mode Hors-Ligne Intelligente</h4>
+                <h4 className="font-bold text-slate-900 text-sm">Catalogue depuis votre téléphone</h4>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  Continuez de saisir vos commandes même si le réseau mobile s'interrompt.
-                </p>
-              </div>
-
-              <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1.5">
-                <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#0066FF] flex items-center justify-center font-bold">
-                  <Video className="w-4 h-4" />
-                </div>
-                <h4 className="font-bold text-slate-900 text-sm">Studio Live Shopping Intégré</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Filtres embellissants, affichage des prix en surimpression et modération automatique.
+                  Ajoutez ou modifiez vos produits en quelques secondes avec l'appareil photo.
                 </p>
               </div>
 
@@ -246,116 +219,71 @@ export const MobileAppSection: React.FC<MobileAppSectionProps> = ({ onOpenSignup
                 <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#0066FF] flex items-center justify-center font-bold">
                   <Mic className="w-4 h-4" />
                 </div>
-                <h4 className="font-bold text-slate-900 text-sm">Dictée Vocale Wolof & Français</h4>
+                <h4 className="font-bold text-slate-900 text-sm">DIAYEMA — assistante vocale IA</h4>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  Dictez vos articles et clients à la voix sans toucher au clavier de votre téléphone.
+                  Posez vos questions en wolof ou en français : résumé du jour, commandes, clients.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1.5">
+                <div className="w-8 h-8 rounded-xl bg-blue-50 text-[#0066FF] flex items-center justify-center font-bold">
+                  <BarChart2 className="w-4 h-4" />
+                </div>
+                <h4 className="font-bold text-slate-900 text-sm">Tableau de bord instantané</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Suivez votre chiffre d'affaires, vos meilleures ventes et vos statistiques live.
                 </p>
               </div>
             </div>
 
           </motion.div>
 
-          {/* Right Phone Mockup Column */}
-          <motion.div 
+          {/* Right Column: Real Seller App Screenshots */}
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 flex justify-center"
+            className="lg:col-span-5 flex flex-col gap-4"
           >
-            <div className="relative w-full max-w-[320px] sm:max-w-[360px]">
-              
-              {/* Outer Glow */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 via-sky-400 to-indigo-600 rounded-[50px] opacity-20 blur-2xl pointer-events-none" />
-
-              {/* iPhone Frame */}
-              <div className="relative bg-slate-900 rounded-[48px] p-4 shadow-2xl border-4 border-slate-800">
-                
-                {/* Dynamic Island / Notch */}
-                <div className="absolute top-7 left-1/2 -translate-x-1/2 w-28 h-5 bg-slate-950 rounded-full z-30 flex items-center justify-center">
-                  <div className="w-3 h-3 rounded-full bg-slate-900 mr-2" />
-                  <div className="w-2 h-2 rounded-full bg-blue-900/60" />
-                </div>
-
-                {/* Screen Canvas */}
-                <div className="relative bg-slate-950 rounded-[38px] overflow-hidden border border-slate-800 pt-10 pb-6 px-4 space-y-4 min-h-[580px] flex flex-col justify-between text-white">
-                  
-                  {/* Top Bar inside App */}
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-800/80">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-lg bg-[#0066FF] flex items-center justify-center text-xs font-bold text-white">
-                        D
-                      </div>
-                      <span className="font-bold text-xs text-white">Diayma Mobile</span>
-                    </div>
-                    <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded-full border border-emerald-500/30">
-                      ● Live en direct
-                    </span>
-                  </div>
-
-                  {/* Simulated App Screen Live Stream */}
-                  <div className="relative h-44 rounded-2xl overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center group">
-                    <img 
-                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" 
-                      alt="Vendeuse en live Diayma" 
-                      className="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-black/30" />
-                    
-                    {/* Floating Overlay Badge */}
-                    <div className="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-md flex items-center gap-1 shadow-md">
-                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-ping" />
-                      LIVE DAKAR
-                    </div>
-
-                    <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-md border border-white/10">
-                      142 spectatrices
-                    </div>
-
-                    {/* Streamer banner bottom */}
-                    <div className="absolute bottom-3 left-3 right-3 bg-slate-900/90 backdrop-blur-md p-2 rounded-xl border border-white/10 text-xs">
-                      <div className="font-bold text-white text-[11px]">Robe Soie de Venise</div>
-                      <div className="flex items-center justify-between text-[#00C3F8] font-bold text-[11px] mt-0.5">
-                        <span>25 000 FCFA</span>
-                        <span className="bg-[#0066FF] text-white px-2 py-0.5 rounded text-[9px]">Acheter Wave</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Simulated Recent Wave / Orange Money Notification */}
-                  <div className="p-3 bg-slate-900/90 border border-slate-800 rounded-2xl space-y-2">
-                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
-                      <span>Paiement Récent Wave</span>
-                      <span className="text-emerald-400 font-extrabold">Instant</span>
-                    </div>
-                    <div className="flex items-center justify-between text-xs">
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-[#00C3F8]/20 text-[#00C3F8] flex items-center justify-center font-bold text-[10px]">
-                          🌊
-                        </div>
-                        <div>
-                          <div className="font-semibold text-white">Aminata Diallo</div>
-                          <div className="text-[10px] text-slate-400">Paiement validé par Fatou</div>
-                        </div>
-                      </div>
-                      <span className="font-extrabold text-emerald-400 text-xs">+25 000 F</span>
-                    </div>
-                  </div>
-
-                  {/* Bottom Mobile Action */}
-                  <button 
-                    onClick={onOpenSignup}
-                    className="w-full py-3 rounded-xl bg-[#0066FF] hover:bg-[#0052CC] text-white font-bold text-xs text-center flex items-center justify-center gap-2 shadow-lg shadow-blue-500/30"
-                  >
-                    <span>Installer sur mon téléphone</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-
-                </div>
-
+            {/* Screenshot 1: Catalogue & préparation live */}
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-tr from-blue-200/20 to-indigo-100/10 blur-xl rounded-2xl pointer-events-none" />
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/70 bg-white">
+                <img
+                  src="/screens/parcours_vendeur_1.png"
+                  alt="Gestion catalogue et préparation live sur Diayma"
+                  className="w-full h-auto block"
+                />
               </div>
-
+              <p className="mt-2 text-center text-[11px] text-slate-400 font-medium">
+                Catalogue · Ajout produit · Préparation live
+              </p>
             </div>
+
+            {/* Screenshot 2: Live en direct & dashboard */}
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-bl from-emerald-100/20 to-blue-100/10 blur-xl rounded-2xl pointer-events-none" />
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/70 bg-white">
+                <img
+                  src="/screens/parcours_vendeur_2.png"
+                  alt="Live en direct, commandes et tableau de bord Diayma"
+                  className="w-full h-auto block"
+                />
+              </div>
+              <p className="mt-2 text-center text-[11px] text-slate-400 font-medium">
+                Live en direct · Commandes · Tableau de bord
+              </p>
+            </div>
+
+            {/* CTA */}
+            <button
+              onClick={onOpenSignup}
+              className="mt-2 w-full py-3.5 rounded-2xl bg-[#0066FF] hover:bg-[#0052CC] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 transition-all"
+            >
+              <span>Commencer gratuitement</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </motion.div>
 
         </div>

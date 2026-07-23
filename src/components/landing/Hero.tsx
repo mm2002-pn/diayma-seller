@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Play, ArrowRight, CheckCircle2, Mic, Volume2, ShoppingCart, Radio } from 'lucide-react';
+import { Play, ArrowRight, CheckCircle2, Mic, Volume2 } from 'lucide-react';
 
 interface HeroProps {
   onOpenSignup: () => void;
@@ -199,16 +199,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSignup, onOpenDemo, onOpenAssi
 
           </motion.div>
 
-          {/* Right Visual Column: Smartphone Mockup Frame */}
-          <motion.div 
+          {/* Right Visual Column: Real Buyer App Screenshot */}
+          <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lg:col-span-5 relative flex justify-center lg:justify-end"
           >
-            
-            {/* Top Floating Badge 1 */}
-            <motion.div 
+
+            {/* Top Floating Badge */}
+            <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
               className="absolute -top-4 -left-2 sm:left-4 z-20 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200 shadow-xl flex items-center gap-2.5"
@@ -222,8 +222,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSignup, onOpenDemo, onOpenAssi
               </div>
             </motion.div>
 
-            {/* Bottom Floating Badge 2 */}
-            <motion.div 
+            {/* Bottom Floating Badge */}
+            <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
               className="absolute -bottom-6 -right-2 sm:right-2 z-20 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl border border-slate-200 shadow-xl flex items-center gap-3"
@@ -234,113 +234,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSignup, onOpenDemo, onOpenAssi
               <div>
                 <div className="text-xs font-bold text-slate-900 flex items-center gap-1">
                   <span>+25 000 FCFA</span>
-                  <span className="text-emerald-600 text-[10px] bg-emerald-50 px-1.5 py-0.2 rounded font-bold">Reçu</span>
+                  <span className="text-emerald-600 text-[10px] bg-emerald-50 px-1.5 py-0.5 rounded font-bold">Reçu</span>
                 </div>
                 <div className="text-[10px] text-slate-500">Paiement automatique Wave</div>
               </div>
             </motion.div>
 
-            {/* Phone Mockup Body */}
-            <div className="w-full max-w-sm bg-slate-900 p-3 rounded-[40px] shadow-2xl border-4 border-slate-800 relative transform rotate-1 hover:rotate-0 transition-transform duration-300">
-
-              {/* Phone Top Notch */}
-              <div className="w-32 h-4 bg-slate-800 rounded-b-xl mx-auto mb-2 flex items-center justify-center">
-                <div className="w-12 h-1 bg-slate-700 rounded-full" />
+            {/* Real screenshot: buyer journey */}
+            <div className="relative w-full max-w-lg transform rotate-1 hover:rotate-0 transition-transform duration-300">
+              <div className="absolute -inset-4 bg-gradient-to-tr from-blue-300/20 via-indigo-200/15 to-transparent blur-3xl rounded-3xl pointer-events-none" />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/70 bg-white">
+                <img
+                  src="/screens/parcours_acheteur.png"
+                  alt="Parcours acheteur Diayma — de TikTok à la commande confirmée"
+                  className="w-full h-auto block"
+                />
               </div>
-
-              {/* Screen — Buyer App */}
-              <div className="bg-white rounded-[30px] overflow-hidden" style={{ minHeight: 520 }}>
-
-                {/* ── ShopHeader (exact replica) ── */}
-                <div className="flex items-center justify-between px-3.5 py-2.5 bg-white/95 border-b border-slate-100 sticky top-0 z-20">
-                  <div className="flex items-center gap-2">
-                    <div className="h-6 w-6 rounded-md bg-[#0066FF] flex items-center justify-center shrink-0">
-                      <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8 3.582-8 8-8zm-1 4v4H7l5 5 5-5h-4V8h-2z"/></svg>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <span className="inline-flex items-center gap-1 rounded-full bg-red-500 px-1.5 py-0.5 text-[8px] font-bold text-white uppercase tracking-wide">
-                        <Radio className="h-2 w-2 animate-pulse" />
-                        Live
-                      </span>
-                      <span className="text-[10px] font-semibold text-slate-800">Catalogue</span>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1.5 rounded-full bg-slate-50 px-2 py-1 border border-slate-200">
-                    <div className="h-4 w-4 rounded-full bg-[#0066FF] flex items-center justify-center text-white text-[7px] font-bold shrink-0">N</div>
-                    <span className="text-[9px] font-semibold text-slate-700">Ndeye Wax</span>
-                  </div>
-                </div>
-
-                {/* ── Product photo carousel (full height) ── */}
-                <div className="relative bg-amber-50" style={{ height: 280 }}>
-                  <img
-                    src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=400&h=560"
-                    alt="Robe en Wax"
-                    className="w-full h-full object-cover object-top"
-                  />
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/75 to-transparent" />
-                  {/* Price */}
-                  <div className="absolute bottom-4 left-4">
-                    <div className="text-[26px] font-extrabold text-white leading-none">35 000</div>
-                    <div className="text-xs font-semibold text-white/80 mt-0.5">F CFA</div>
-                  </div>
-                  {/* Viewer count */}
-                  <div className="absolute top-2.5 right-3 flex items-center gap-1 bg-black/50 backdrop-blur-sm rounded-full px-2 py-0.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 animate-pulse"></span>
-                    <span className="text-[9px] text-white font-semibold">142 en direct</span>
-                  </div>
-                </div>
-
-                {/* ── Dots ── */}
-                <div className="flex justify-center gap-1.5 py-2.5">
-                  <div className="h-1.5 w-5 rounded-full bg-[#0066FF]" />
-                  <div className="h-1.5 w-1.5 rounded-full bg-slate-200" />
-                  <div className="h-1.5 w-1.5 rounded-full bg-slate-200" />
-                  <div className="h-1.5 w-1.5 rounded-full bg-slate-200" />
-                </div>
-
-                {/* ── Commander button ── */}
-                <div className="px-3 pb-3">
-                  <div className="w-full h-12 rounded-full bg-[#0066FF] text-white text-sm font-bold flex items-center justify-center gap-2 shadow-md shadow-blue-500/30">
-                    <ShoppingCart className="w-4 h-4" />
-                    <span>Commander</span>
-                  </div>
-                </div>
-
-                {/* ── Bottom sheet checkout (partiellement visible) ── */}
-                <div className="mx-2 mb-2 bg-white rounded-2xl border border-slate-100 shadow-lg overflow-hidden">
-                  {/* Drag handle */}
-                  <div className="flex justify-center pt-2 pb-1">
-                    <div className="h-1 w-8 rounded-full bg-slate-200" />
-                  </div>
-                  {/* Item preview */}
-                  <div className="px-3 pb-3 space-y-2">
-                    <div className="flex items-center gap-2.5 bg-slate-50 border border-slate-100 rounded-xl p-2">
-                      <img
-                        src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=80"
-                        className="h-9 w-9 rounded-lg object-cover flex-shrink-0"
-                        alt=""
-                      />
-                      <div className="flex-1 min-w-0">
-                        <div className="text-[10px] font-semibold text-slate-800 truncate">Robe Wax Imprimé</div>
-                        <div className="text-[10px] font-bold text-slate-900">35 000 F × 1</div>
-                      </div>
-                    </div>
-                    {/* Wave button */}
-                    <div className="w-full h-10 rounded-full bg-[#0066FF] text-white text-[11px] font-bold flex items-center justify-center gap-2">
-                      <span className="h-5 w-5 rounded-md bg-white flex items-center justify-center">
-                        <svg viewBox="0 0 32 32" className="h-3.5 w-3.5" fill="none">
-                          <rect width="32" height="32" rx="6" fill="#1F56DE"/>
-                          <path d="M5 20C7 20 8 14 10 14C12 14 12 20 14 20C16 20 17 14 19 14C21 14 22 20 24 20" stroke="white" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                        </svg>
-                      </span>
-                      Payer avec Wave · Orange Money
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+              <p className="mt-3 text-center text-[11px] text-slate-400 font-medium">
+                De TikTok à la commande confirmée — en moins de 2 minutes
+              </p>
             </div>
 
           </motion.div>
