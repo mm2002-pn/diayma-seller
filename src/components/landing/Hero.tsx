@@ -199,7 +199,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSignup, onOpenDemo, onOpenAssi
 
           </motion.div>
 
-          {/* Right Visual Column: Real Buyer App Screenshot */}
+          {/* Right Visual Column: Buyer App Phone Mockup */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -207,15 +207,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSignup, onOpenDemo, onOpenAssi
             className="lg:col-span-5 relative flex justify-center lg:justify-end"
           >
 
+            {/* Pixelated parcours_acheteur as ambient background */}
+            <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none" aria-hidden>
+              <img
+                src="/screens/parcours_acheteur.png"
+                alt=""
+                className="w-full h-full object-cover"
+                style={{ filter: 'blur(18px) saturate(0.4) brightness(0.92)', transform: 'scale(1.12)', opacity: 0.18 }}
+              />
+            </div>
+
             {/* Top Floating Badge */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
               className="absolute -top-4 -left-2 sm:left-4 z-20 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-slate-200 shadow-xl flex items-center gap-2.5"
             >
-              <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-lg">
-                🇸🇳
-              </div>
+              <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-lg">🇸🇳</div>
               <div>
                 <div className="text-xs font-bold text-slate-900">IA Bilingue Wolof & FR</div>
                 <div className="text-[10px] text-slate-500">Comprend le dialecte local</div>
@@ -228,31 +236,94 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSignup, onOpenDemo, onOpenAssi
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
               className="absolute -bottom-6 -right-2 sm:right-2 z-20 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl border border-slate-200 shadow-xl flex items-center gap-3"
             >
-              <div className="w-9 h-9 rounded-xl bg-sky-500 flex items-center justify-center text-white font-bold text-xs shadow-md">
-                🌊
-              </div>
+              <div className="w-9 h-9 rounded-xl bg-sky-500 flex items-center justify-center text-white text-xs shadow-md">🌊</div>
               <div>
                 <div className="text-xs font-bold text-slate-900 flex items-center gap-1">
-                  <span>+25 000 FCFA</span>
+                  <span>+12 000 FCFA</span>
                   <span className="text-emerald-600 text-[10px] bg-emerald-50 px-1.5 py-0.5 rounded font-bold">Reçu</span>
                 </div>
-                <div className="text-[10px] text-slate-500">Paiement automatique Wave</div>
+                <div className="text-[10px] text-slate-500">Paiement Wave confirmé</div>
               </div>
             </motion.div>
 
-            {/* Real screenshot: buyer journey */}
-            <div className="relative w-full max-w-lg transform rotate-1 hover:rotate-0 transition-transform duration-300">
-              <div className="absolute -inset-4 bg-gradient-to-tr from-blue-300/20 via-indigo-200/15 to-transparent blur-3xl rounded-3xl pointer-events-none" />
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/70 bg-white">
-                <img
-                  src="/screens/parcours_acheteur.png"
-                  alt="Parcours acheteur Diayma — de TikTok à la commande confirmée"
-                  className="w-full h-auto block"
-                />
+            {/* Phone Frame */}
+            <div className="relative z-10 w-full max-w-sm bg-slate-900 p-3 rounded-[40px] shadow-2xl border-4 border-slate-800 transform rotate-1 hover:rotate-0 transition-transform duration-300">
+              {/* Notch */}
+              <div className="w-32 h-4 bg-slate-800 rounded-b-xl mx-auto mb-2 flex items-center justify-center">
+                <div className="w-12 h-1 bg-slate-700 rounded-full" />
               </div>
-              <p className="mt-3 text-center text-[11px] text-slate-400 font-medium">
-                De TikTok à la commande confirmée — en moins de 2 minutes
-              </p>
+
+              {/* Screen — Buyer Catalog (cream/forest palette) */}
+              <div className="bg-[#F5F0E8] rounded-[30px] overflow-hidden" style={{ minHeight: 510 }}>
+
+                {/* Header */}
+                <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#DDD0B3]">
+                  <div className="flex items-center gap-2">
+                    <div className="h-7 w-7 rounded-full bg-[#1F4D3A] flex items-center justify-center text-white text-[11px] font-extrabold shrink-0">A</div>
+                    <span className="text-xs font-bold text-[#1A1815]">AliaDiop</span>
+                  </div>
+                  <span className="inline-flex items-center gap-1 rounded-full bg-red-500/10 border border-red-200 px-2 py-0.5 text-[9px] font-bold text-red-600 uppercase tracking-wide">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+                    Live
+                  </span>
+                </div>
+
+                {/* Product photo */}
+                <div className="relative" style={{ height: 240 }}>
+                  <img
+                    src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=400&h=480"
+                    alt="Produit en vente"
+                    className="w-full h-full object-cover object-top"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#F5F0E8] to-transparent" />
+                </div>
+
+                {/* Price + CTA */}
+                <div className="px-4 pt-2 pb-3">
+                  <div className="flex items-baseline gap-1 mb-3">
+                    <span className="text-2xl font-extrabold text-[#1A1815]">12 000</span>
+                    <span className="text-sm font-semibold text-[#5C5347] ml-1">F CFA</span>
+                  </div>
+                  <div className="w-full py-3 rounded-full bg-[#1F4D3A] text-white text-sm font-bold flex items-center justify-center">
+                    Commander
+                  </div>
+                </div>
+
+                {/* Partial checkout bottom sheet */}
+                <div className="mx-3 mb-3 bg-white rounded-2xl border border-[#DDD0B3] shadow-sm overflow-hidden">
+                  <div className="flex justify-center pt-2 pb-1">
+                    <div className="h-1 w-8 rounded-full bg-[#DDD0B3]" />
+                  </div>
+                  <div className="px-3 pb-3 space-y-2">
+                    <div className="flex items-center gap-2.5 bg-[#F7F4EE] border border-[#E4D8C0] rounded-xl p-2">
+                      <img
+                        src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&q=80&w=80"
+                        className="h-9 w-9 rounded-lg object-cover flex-shrink-0"
+                        alt=""
+                      />
+                      <div className="flex-1 min-w-0">
+                        <div className="text-[10px] font-semibold text-[#1A1815] truncate">Robe Wax Imprimé</div>
+                        <div className="text-[10px] font-bold text-[#5C5347]">12 000 F × 1</div>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-1.5">
+                      <div className="py-2 px-2 rounded-xl border border-orange-200 bg-orange-50 flex items-center gap-1.5">
+                        <div className="w-4 h-4 rounded-md bg-orange-400 flex items-center justify-center shrink-0">
+                          <span className="text-[7px] font-bold text-white">OM</span>
+                        </div>
+                        <span className="text-[9px] font-semibold text-orange-700">Orange Money</span>
+                      </div>
+                      <div className="py-2 px-2 rounded-xl border border-blue-200 bg-blue-50 flex items-center gap-1.5">
+                        <div className="w-4 h-4 rounded-md bg-[#1F56DE] flex items-center justify-center shrink-0">
+                          <span className="text-[7px] font-bold text-white">W</span>
+                        </div>
+                        <span className="text-[9px] font-semibold text-blue-700">Wave</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
 
           </motion.div>

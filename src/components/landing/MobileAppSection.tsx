@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Smartphone, Bell, Package, Mic, BarChart2, ArrowRight, QrCode, Send, Check } from 'lucide-react';
+import { Smartphone, Bell, Package, Mic, BarChart2, QrCode, Send, Check } from 'lucide-react';
 
 interface MobileAppSectionProps {
   onOpenSignup?: () => void;
@@ -238,52 +238,91 @@ export const MobileAppSection: React.FC<MobileAppSectionProps> = ({ onOpenSignup
 
           </motion.div>
 
-          {/* Right Column: Real Seller App Screenshots */}
+          {/* Right Column: Seller App Phone Mockup — "Pendant le direct" */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-5 flex flex-col gap-4"
+            className="lg:col-span-5 flex justify-center"
           >
-            {/* Screenshot 1: Catalogue & préparation live */}
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-tr from-blue-200/20 to-indigo-100/10 blur-xl rounded-2xl pointer-events-none" />
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/70 bg-white">
-                <img
-                  src="/screens/parcours_vendeur_1.png"
-                  alt="Gestion catalogue et préparation live sur Diayma"
-                  className="w-full h-auto block"
-                />
-              </div>
-              <p className="mt-2 text-center text-[11px] text-slate-400 font-medium">
-                Catalogue · Ajout produit · Préparation live
-              </p>
-            </div>
+            <div className="relative w-full max-w-[320px] sm:max-w-[360px]">
 
-            {/* Screenshot 2: Live en direct & dashboard */}
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-bl from-emerald-100/20 to-blue-100/10 blur-xl rounded-2xl pointer-events-none" />
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/70 bg-white">
-                <img
-                  src="/screens/parcours_vendeur_2.png"
-                  alt="Live en direct, commandes et tableau de bord Diayma"
-                  className="w-full h-auto block"
-                />
-              </div>
-              <p className="mt-2 text-center text-[11px] text-slate-400 font-medium">
-                Live en direct · Commandes · Tableau de bord
-              </p>
-            </div>
+              {/* Outer glow — forest green tones matching app palette */}
+              <div className="absolute -inset-4 bg-gradient-to-tr from-[#1F4D3A]/25 via-[#B8945F]/15 to-transparent rounded-[50px] blur-3xl pointer-events-none" />
 
-            {/* CTA */}
-            <button
-              onClick={onOpenSignup}
-              className="mt-2 w-full py-3.5 rounded-2xl bg-[#0066FF] hover:bg-[#0052CC] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-500/25 transition-all"
-            >
-              <span>Commencer gratuitement</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+              {/* iPhone Frame */}
+              <div className="relative bg-slate-900 rounded-[48px] p-4 shadow-2xl border-4 border-slate-800">
+
+                {/* Dynamic Island */}
+                <div className="absolute top-7 left-1/2 -translate-x-1/2 w-28 h-5 bg-slate-950 rounded-full z-30" />
+
+                {/* Screen — Seller live dashboard (cream/forest palette) */}
+                <div className="relative bg-[#F5F0E8] rounded-[38px] overflow-hidden border border-slate-800 pt-10 pb-0 min-h-[580px] flex flex-col text-[#1A1815]">
+
+                  {/* Header */}
+                  <div className="flex items-center justify-between px-4 py-2.5 border-b border-[#DDD0B3]">
+                    <div className="flex items-center gap-2">
+                      <div className="h-7 w-7 rounded-full bg-[#1F4D3A] flex items-center justify-center text-white text-[11px] font-extrabold shrink-0">A</div>
+                      <span className="text-xs font-bold text-[#1A1815]">AliaDiop</span>
+                    </div>
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#1F4D3A] text-white text-[10px] font-bold uppercase tracking-wide">
+                      DIRECT
+                    </span>
+                  </div>
+
+                  {/* Revenue counter */}
+                  <div className="px-5 pt-5 pb-4 border-b border-[#DDD0B3]">
+                    <div className="text-[10px] text-[#8A7E6E] uppercase tracking-widest font-semibold mb-1.5">Chiffre d'affaires</div>
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-[40px] font-black tracking-tight leading-none text-[#1A1815]">96 000</span>
+                      <span className="text-sm font-bold text-[#5C5347]">F CFA</span>
+                    </div>
+                    <div className="mt-2 text-[11px] text-[#8A7E6E]">8 commandes · hors livraison</div>
+                  </div>
+
+                  {/* Order list */}
+                  <div className="flex-1 px-3 py-3 space-y-1.5">
+                    {[
+                      { price: '7 000', method: 'OM',   label: 'Orange Money', badge: 'text-orange-700 bg-orange-50 border-orange-100' },
+                      { price: '12 000', method: 'Wave', label: 'Wave',        badge: 'text-blue-700 bg-blue-50 border-blue-100' },
+                      { price: '9 000',  method: 'OM',   label: 'Orange Money', badge: 'text-orange-700 bg-orange-50 border-orange-100' },
+                      { price: '15 000', method: 'COD',  label: 'À la livraison', badge: 'text-slate-600 bg-slate-50 border-slate-200' },
+                    ].map((order, i) => (
+                      <div key={i} className="flex items-center justify-between bg-white rounded-xl px-3 py-2 border border-[#E4D8C0]">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-6 h-6 rounded-md bg-[#EDE6D6] border border-[#DDD0B3] shrink-0" />
+                          <span className="text-[12px] font-bold text-[#1A1815]">{order.price} F</span>
+                        </div>
+                        <span className={`text-[9px] px-1.5 py-0.5 rounded-lg border font-bold ${order.badge}`}>{order.method}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Bottom: Terminer button + nav bar */}
+                  <div className="px-4 pt-1 pb-3">
+                    <button
+                      onClick={onOpenSignup}
+                      className="w-full py-3 rounded-full bg-[#1A1815] text-white text-[12px] font-bold flex items-center justify-center gap-2"
+                    >
+                      <span>Terminer le direct</span>
+                    </button>
+                  </div>
+
+                  {/* Bottom nav bar (4 tabs) */}
+                  <div className="flex items-center justify-around border-t border-[#DDD0B3] px-4 py-2.5 bg-[#F5F0E8]">
+                    {['🏠', '📦', '📋', '📊'].map((icon, i) => (
+                      <div key={i} className={`flex flex-col items-center gap-0.5 ${i === 2 ? 'opacity-100' : 'opacity-30'}`}>
+                        <span className="text-base leading-none">{icon}</span>
+                        <div className={`h-1 w-1 rounded-full ${i === 2 ? 'bg-[#1F4D3A]' : 'bg-transparent'}`} />
+                      </div>
+                    ))}
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
           </motion.div>
 
         </div>
