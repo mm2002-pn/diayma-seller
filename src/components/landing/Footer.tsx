@@ -16,6 +16,10 @@ export const Footer: React.FC = () => {
             <p className="text-xs sm:text-sm text-slate-400 max-w-sm leading-relaxed font-normal">
               La plateforme tout-en-un de vente en ligne et live shopping pour les commerçantes au Sénégal. Vendez en direct, encaissez instantanément par Wave & Orange Money et gérez vos clients avec l'IA.
             </p>
+            <p className="text-xs text-slate-500 leading-relaxed">
+              DIAYMA est un produit développé et exploité par{' '}
+              <span className="text-slate-300 font-semibold">REAXION</span>.
+            </p>
 
             {/* Mobile App Downloads Big Cards in Footer */}
             <div className="pt-2 space-y-3">
@@ -98,13 +102,13 @@ export const Footer: React.FC = () => {
               Contact Sénégal
             </h3>
             <ul className="space-y-2.5 text-xs text-slate-400 font-normal">
-              <li className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#0066FF] flex-shrink-0" />
-                <span>Dakar, Plateau, Sénégal</span>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-[#0066FF] flex-shrink-0 mt-0.5" />
+                <span>Yoff Océan, en face Résidence Mame Ndiare<br />Km 5, Avenue Cheikh Anta Diop<br />10200 Dakar, Sénégal</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-[#0066FF] flex-shrink-0" />
-                <span>+221 77 000 00 00</span>
+                <span>+221 77 488 24 53</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#0066FF] flex-shrink-0" />
@@ -116,9 +120,12 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-          <p>© {new Date().getFullYear()} Diayma. Tous droits réservés.</p>
-          <div className="flex items-center gap-1.5 font-medium text-slate-300">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+          <div className="flex flex-col items-center sm:items-start gap-1">
+            <p>© {new Date().getFullYear()} <span className="text-slate-400 font-semibold">REAXION</span>. Tous droits réservés.</p>
+            <p>DIAYMA est une marque développée et exploitée par <span className="text-slate-400 font-semibold">REAXION</span> — Km 5 Av. Cheikh Anta Diop, 10200 Dakar, Sénégal</p>
+          </div>
+          <div className="flex items-center gap-1.5 font-medium text-slate-300 shrink-0">
             <span>Fait avec</span>
             <Heart className="w-3.5 h-3.5 fill-red-500 text-red-500 animate-pulse" />
             <span>au Sénégal 🇸🇳</span>
